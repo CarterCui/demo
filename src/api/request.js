@@ -100,9 +100,9 @@ export function get (url, params) {
     axios.get(url, {
       params: params
     }).then(res => {
-      resolve(res.data)
+      resolve(res)
     }).catch(err => {
-      reject(err.data)
+      reject(err)
     })
   })
 }
@@ -113,13 +113,10 @@ export function get (url, params) {
  */
 export function post (url, params) {
   return new Promise((resolve, reject) => {
-    axios.post(url, params)
-      .then(res => {
-        resolve(res.data)
-      })
-      .catch(err => {
-        reject(err.data)
-      })
+    axios.post(url, params).then(res => {
+      resolve(res)
+    }).catch(err => {
+      reject(err)
+    })
   })
 }
-
