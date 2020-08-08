@@ -3,7 +3,7 @@
         {{stus}}
         <hr>
         <son :stus="stus"></son>
-<!--        <son @func="getFromSon"></son>-->
+<!--        <son @changeStus="getFromSon"></son>-->
     </div>
 </template>
 
