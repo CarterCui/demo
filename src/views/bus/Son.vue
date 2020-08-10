@@ -17,6 +17,8 @@ export default {
       // 该机制其实就是保存父组件的函数
       Bus.$emit('changeStus', [1, 2, 3])
       // this.$emit('changeStus', [1, 2, 3])
+
+      // 2 this.$emit('updata:title','hello')
     }
   }
 }

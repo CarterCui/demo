@@ -4,6 +4,8 @@
         <hr>
         <son :stus="stus"></son>
 <!--        <son @changeStus="getFromSon"></son>-->
+<!--       <child :title.sync="title"></child>-->
+<!--        通过sync传值-->
     </div>
 </template>
 

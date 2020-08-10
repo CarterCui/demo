@@ -11,7 +11,11 @@ export default new Router({
     // },
     // 重定向
     {
-      path: '/',
+      path: '/scroll',
+      component: resolve => require(['../components/Scroll'], resolve)
+    },
+    {
+      path: '/comp',
       name: 'Comp',
       component: resolve => require(['../views/components'], resolve)
     },
@@ -31,7 +35,7 @@ export default new Router({
       component: resolve => require(['../views/Shopping/car'], resolve)
     },
     {
-      path: '*',
+      path: '/*',
       component: resolve => require(['../views/Shopping/login'], resolve)
     }
   ]

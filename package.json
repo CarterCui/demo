@@ -13,8 +13,10 @@
   "dependencies": {
     "amfe-flexible": "^2.2.1",
     "axios": "^0.19.2",
+    "better-scroll": "^1.15.2",
     "echarts": "^4.8.0",
     "vue": "^2.5.2",
+    "vue-echarts": "^5.0.0-beta.0",
     "vue-router": "^3.4.1",
     "vuex": "^3.5.1"
   },

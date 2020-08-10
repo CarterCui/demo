@@ -13,14 +13,14 @@ Vue.component('chart', ECharts)
 Vue.prototype.$axios = axios
 Vue.config.productionTip = false
 
-router.beforeEach((to, from, next) => {
-  const role = localStorage.getItem('userid')
-  if (!role && to.path !== '/login') {
-    next('/login')
-  } else {
-    next()
-  }
-})
+// router.beforeEach((to, from, next) => {
+//   const role = localStorage.getItem('userid')
+//   if (!role && to.path !== '/login') {
+//     next('/login')
+//   } else {
+//     next()
+//   }
+// })
 
 // router.beforeEach((to, from, next) => {
 //   const role = localStorage.getItem('ms__username');
