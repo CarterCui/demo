@@ -2,6 +2,8 @@
 
 > A Vue.js project
 
+移动端的一些小demo
+
 ## Build Setup
 
 ``` bash
