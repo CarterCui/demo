@@ -11,6 +11,10 @@ export default new Router({
     // },
     // 重定向
     {
+      path: '/',
+      component: resolve => require(['../components/imgLazy'], resolve)
+    },
+    {
       path: '/scroll',
       component: resolve => require(['../components/Scroll'], resolve)
     },
