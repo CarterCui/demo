@@ -63,6 +63,9 @@ export default {
         }
       })
     }
+  },
+  beforeDestroy () {
+    clearTimeout(this.clock)
   }
 }
 </script>
