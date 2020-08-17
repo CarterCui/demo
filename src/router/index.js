@@ -11,6 +11,10 @@ export default new Router({
     // },
     // 重定向
     {
+      path: '/talkButton',
+      component: resolve => require(['../components/TalkButton'], resolve)
+    },
+    {
       path: '/',
       component: resolve => require(['../components/imgLazy'], resolve)
     },

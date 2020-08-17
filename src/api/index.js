@@ -1,13 +1,13 @@
 import { get, post } from './request'
-function api1 (param) {
+export function api1 (param) {
   return post('http://cbt.shangjin618.com/lianxin-botsupport-server/common/fileUpload', param)
 }
-function api2 (param) {
+export function api2 (param) {
   return get('http://cbt.shangjin618.com/lianxin-botsupport-server/common/fileUpload', param)
 }
-export default {
-  api1,
-  api2
+export function api3 (param, config = {}) {
+  const url = 'https://v1.alapi.cn/api/music/search?keyword=' + param.keywords
+  return get(url, param, ...config)
 }
 
 // export const api3 = p1 => get('http://cbt.shangjin618.com/lianxin-botsupport-server/common/fileUpload', p1)

@@ -1,15 +1,36 @@
 import axios from 'axios'
 
-// 环境的切换
-if (process.env.NODE_ENV === 'development') {
-  axios.defaults.baseURL = ''
-} else if (process.env.NODE_ENV === 'debug') {
-  axios.defaults.baseURL = ''
-} else if (process.env.NODE_ENV === 'production') {
-  axios.defaults.baseURL = ''
-}
-axios.defaults.timeout = 10000
-axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded;charset=UTF-8;multipart/form-data'
+const request = axios.create({
+  baseURL: process.env.BASE_URL,
+  timeout: 20000
+})
+
+request.interceptors.request.use(function (config) {
+  // Do something before request is sent
+  return config
+}, function (error) {
+  // Do something with request error
+  return Promise.reject(error)
+})
+
+request.interceptors.response.use(function (response) {
+  // Any status code that lie within the range of 2xx cause this function to trigger
+  // Do something with response data
+  return response
+}, function (error) {
+  // Any status codes that falls outside the range of 2xx cause this function to trigger
+  // Do something with response error
+  return Promise.reject(error)
+})
+
+// // 环境的切换
+// if (process.env.NODE_ENV === 'development') {
+//   axios.defaults.baseURL = ''
+// }else if (process.env.NODE_ENV === 'production') {
+//   axios.defaults.baseURL = ''
+// }
+// axios.defaults.timeout = 10000
+// axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded;charset=UTF-8;multipart/form-data'
 
 // // 请求拦截器
 // axios.interceptors.request.use(
@@ -97,8 +118,13 @@ axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded
  */
 export function get (url, params) {
   return new Promise((resolve, reject) => {
-    axios.get(url, {
-      params: params
+    request({
+      url: url,
+      // data: param,
+      method: 'post'
+      // onDownloadProgress (progress) {
+      //   console.log(Math.round(progress.loaded / progress.total * 100) + '%')
+      // }
     }).then(res => {
       resolve(res)
     }).catch(err => {
@@ -111,9 +137,14 @@ export function get (url, params) {
  * @param {String} url [请求的url地址]
  * @param {Object} params [请求时携带的参数]
  */
-export function post (url, params) {
+export function post (url, params, config = {}) {
   return new Promise((resolve, reject) => {
-    axios.post(url, params).then(res => {
+    request({
+      url: url,
+      // data: param,
+      method: 'post'
+      // ...config
+    }).then(res => {
       resolve(res)
     }).catch(err => {
       reject(err)
