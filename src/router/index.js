@@ -11,16 +11,8 @@ export default new Router({
     // },
     // 重定向
     {
-      path: '/talkButton',
-      component: resolve => require(['../components/TalkButton'], resolve)
-    },
-    {
       path: '/',
-      component: resolve => require(['../components/imgLazy'], resolve)
-    },
-    {
-      path: '/scroll',
-      component: resolve => require(['../components/Scroll'], resolve)
+      component: resolve => require(['../views/upload'], resolve)
     },
     {
       path: '/comp',

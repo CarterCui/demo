@@ -116,15 +116,12 @@ request.interceptors.response.use(function (response) {
  * @param {String} url [请求的url地址]
  * @param {Object} params [请求时携带的参数]
  */
-export function get (url, params) {
+export function get (url, param) {
   return new Promise((resolve, reject) => {
     request({
       url: url,
-      // data: param,
-      method: 'post'
-      // onDownloadProgress (progress) {
-      //   console.log(Math.round(progress.loaded / progress.total * 100) + '%')
-      // }
+      data: param,
+      method: 'get'
     }).then(res => {
       resolve(res)
     }).catch(err => {
@@ -132,18 +129,13 @@ export function get (url, params) {
     })
   })
 }
-/**
- * post方法，对应post请求
- * @param {String} url [请求的url地址]
- * @param {Object} params [请求时携带的参数]
- */
-export function post (url, params, config = {}) {
+
+export function post (url, param) {
   return new Promise((resolve, reject) => {
     request({
       url: url,
-      // data: param,
+      data: param,
       method: 'post'
-      // ...config
     }).then(res => {
       resolve(res)
     }).catch(err => {
