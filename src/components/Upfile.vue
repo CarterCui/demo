@@ -15,7 +15,6 @@
 </template>
 
 <script>
-// import {api1, api2} from '../api'
 export default {
   data () {
     return {
@@ -52,25 +51,6 @@ export default {
       }
       this.uptext = true
     },
-    // upfile () {
-    //   api2({
-    //     // token: 4DBA46139BB839588B876D4AE8310026C5AE575932C901EC6280CA56AF0D,
-    //   })
-    //     // .post("", this.formData)
-    //     .then((res) => {
-    //       console.log(res, '发送成功')
-    //     }).catch((req) => {
-    //       console.log(req, '发送失败')
-    //     })
-    //
-    //   api1({})
-    //     .then((res) => {
-    //       console.log(res, '请求成功')
-    //     }).catch((req) => {
-    //       console.log(req, '请求失败')
-    //     })
-    // },
-
     delect () {
       this.imgDefault = require('../assets/relax_littleGame_01.png')
       this.uptext = false
